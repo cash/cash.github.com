@@ -1,0 +1,146 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Data Model &mdash; Elgg 1.9 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Elgg 1.9 documentation" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../index.html">Elgg 1.9 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="data-model">
+<h1>Data Model<a class="headerlink" href="#data-model" title="Permalink to this headline">¶</a></h1>
+<p>In Elgg, everything runs on a unified data model, based on atomic units of data called entities.</p>
+<p>Plugins are strongly discouraged from dealing with database issues themselves, which makes for a more stable system that also has visible benefits for the end user. Content created by different plugins can be mixed together in consistent ways, which are programmed using generic principles - in other words, plugins are faster to develop, and are at the same time much more powerful.</p>
+<p>Every entity in the system inherits the ElggEntity class. This class controls access permissions, ownership and so on. see <a class="reference internal" href="#elgguser">ElggUser</a></p>
+<img alt="../_images/Elgg_data_model.png" src="../_images/Elgg_data_model.png" />
+<div class="section" id="entities">
+<h2>Entities<a class="headerlink" href="#entities" title="Permalink to this headline">¶</a></h2>
+<p>ElggEntity has four main specializations, which provide extra properties and methods to more easily handle different kinds of data. Render an entity with <a class="reference internal" href="views.html#test"><em>View an entity</em></a></p>
+<div class="section" id="elggobject">
+<h3>ElggObject<a class="headerlink" href="#elggobject" title="Permalink to this headline">¶</a></h3>
+<p>Usually content like blog posts, uploaded files and bookmarks</p>
+</div>
+<div class="section" id="elgguser">
+<h3>ElggUser<a class="headerlink" href="#elgguser" title="Permalink to this headline">¶</a></h3>
+<p>each user in the system</p>
+</div>
+<div class="section" id="elggsite">
+<h3>ElggSite<a class="headerlink" href="#elggsite" title="Permalink to this headline">¶</a></h3>
+<p>each site within an Elgg install</p>
+</div>
+<div class="section" id="elgggroup">
+<h3>ElggGroup<a class="headerlink" href="#elgggroup" title="Permalink to this headline">¶</a></h3>
+<p>multi-user collaborative systems, which were called Communities in prior versions of Elgg</p>
+</div>
+</div>
+<div class="section" id="relationships">
+<h2>Relationships<a class="headerlink" href="#relationships" title="Permalink to this headline">¶</a></h2>
+<p>The ElggRelationship class allows you to quickly establish connections between entities. A user can &#8220;friend&#8221; another user. A user can join a group. A photo can be tagged to indicate a user is in that photo. All of this and more can be done with the ElggRelationship class.</p>
+</div>
+<div class="section" id="annotations-and-metadata">
+<h2>Annotations and metadata<a class="headerlink" href="#annotations-and-metadata" title="Permalink to this headline">¶</a></h2>
+<p>You can extend entities with extra information in two ways:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Metadata This is information you can add to an object to describe it further. For example, tags, an ISBN number, a file location or language information would fall under metadata.</li>
+<li>Annotations Information generally added by third parties which adds to the information provided by the entity. For example, comments and ratings are both annotations.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Data Model</a><ul>
+<li><a class="reference internal" href="#entities">Entities</a><ul>
+<li><a class="reference internal" href="#elggobject">ElggObject</a></li>
+<li><a class="reference internal" href="#elgguser">ElggUser</a></li>
+<li><a class="reference internal" href="#elggsite">ElggSite</a></li>
+<li><a class="reference internal" href="#elgggroup">ElggGroup</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#relationships">Relationships</a></li>
+<li><a class="reference internal" href="#annotations-and-metadata">Annotations and metadata</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/book/data_model.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../index.html">Elgg 1.9 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Elgg Foundation.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
